@@ -3,7 +3,7 @@ import {open, close} from '../database/connection'
 import { HarvestIn } from '../models/harvest/harvestInputModel';
 import { HarvestInformation, HarvestOut } from '../models/harvest/harvestOutModel';
 
-const databasePath: string = "src/database/harvest.db";
+const databasePath: string = 'src/database/harvest.db';
 
 export async function getAllHarvest () {
     return new Promise((resolve, _reject) => {
