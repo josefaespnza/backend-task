@@ -1,5 +1,5 @@
-export interface Harvest {
-    id: number;
+export interface HarvestOut {
+    id: number,
     farmerEmail: string;
     farmerName: string;
     farmerLastName: string;
@@ -12,7 +12,7 @@ export interface Harvest {
     harvestVariety: string;
 }
 
-export class HarvestInformation implements Harvest{
+export class HarvestInformation implements HarvestOut{
     id: number;
     farmerEmail: string;
     farmerName: string;
@@ -53,7 +53,3 @@ export class HarvestInformation implements Harvest{
         this.harvestVariety = harvestVariety;
     }
 }
-
-export type HarvestArray = Array<Harvest>;
-
-
