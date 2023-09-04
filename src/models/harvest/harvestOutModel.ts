@@ -1,55 +1,35 @@
+import { ClientOut } from "../client/clientOutModel";
+import { FarmerOut } from "../farmer/farmerOutModel";
+import { FieldOut } from "../field/fieldOutModel";
+import { FruitOut } from "../fruit/fruitOutModel";
+
 export interface HarvestOut {
     id: number,
-    farmerEmail: string;
-    farmerName: string;
-    farmerLastName: string;
-    clientEmail: string;
-    clientName: string;
-    clientLastName: string;
-    fieldName: string;
-    fieldLocation: string;
-    fruit: string;
-    harvestVariety: string;
+    farmer: FarmerOut,
+    client: ClientOut,
+    field: FieldOut,
+    fruit: FruitOut,
 }
 
 export class HarvestInformation implements HarvestOut{
     id: number;
-    farmerEmail: string;
-    farmerName: string;
-    farmerLastName: string;
-    clientEmail: string;
-    clientName: string;
-    clientLastName: string;
-    fieldName: string;
-    fieldLocation: string;
-    fruit: string;
-    harvestVariety: string;
+    farmer: FarmerOut;
+    client: ClientOut;
+    field: FieldOut;
+    fruit: FruitOut;
 
     constructor(
         id: number,
-        farmerEmail: string,
-        farmerName: string,
-        farmerLastName: string,
-        clientEmail: string,
-        clientName: string,
-        clientLastName: string,
-        fieldName: string,
-        fieldLocation: string,
-        fruit: string,
-        harvestVariety: string
-        
+        farmer: FarmerOut,
+        client: ClientOut,
+        field: FieldOut,
+        fruit: FruitOut,
 
     ) {
         this.id = id;
-        this.farmerEmail = farmerEmail;
-        this.farmerName = farmerName;
-        this.farmerLastName = farmerLastName;
-        this.clientEmail = clientEmail;
-        this.clientName = clientName;
-        this.clientLastName = clientLastName;
-        this.fieldName = fieldName;
-        this.fieldLocation = fieldLocation;
+        this.farmer = farmer;
+        this.client = client;
+        this.field = field;
         this.fruit = fruit;
-        this.harvestVariety = harvestVariety;
     }
 }
