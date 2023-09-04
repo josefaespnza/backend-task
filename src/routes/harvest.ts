@@ -3,8 +3,13 @@ import * as harvestServices from '../services/harvestService';
 const router = express.Router();
 
 router.get('/', async (_req, res) =>{
-    const harvests = await harvestServices.getAllHarvest();
-    res.send(harvests);
+    try{
+        const harvests = await harvestServices.getAllHarvest();
+        res.send(harvests);
+    } catch(err: any){
+        res.status(400).json({"error": err.message})
+    }
+    
 });
 
 router.post('/', async (req, res) =>{
@@ -39,5 +44,7 @@ router.post('/', async (req, res) =>{
     }
     
 });
+
+
 
 export default router;
